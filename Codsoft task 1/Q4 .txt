@@ -1,0 +1,32 @@
+Repeat steps 2 and 3 until the user guesses the correct number.
+
+import java.util.*;
+import java.util.Scanner;
+public class NewClass {
+ 
+    public static void main(String[] args) {
+       
+        int min = 1;
+        int max = 100;
+    Random random = new Random();
+        int randomNum = (int) (Math.random()*(max-min +1)) + min;
+        
+        Scanner scanner = new Scanner(System.in);
+             int numberOfGuesses = 0;
+             
+                boolean hasGuessedCorrectly = false;
+                while (!hasGuessedCorrectly){
+System.out.println("Guess the number between " + min + " and " + max + ":");
+        int userGuess = scanner.nextInt();
+        numberOfGuesses++;
+        if (userGuess == randomNum) {
+            System.out.println("Congratulations! You guessed the correct number.");
+            hasGuessedCorrectly = true;
+        } else if (userGuess < randomNum) {
+                System.out.println("Too low! Try again.");
+            } else {
+                System.out.println("Too high! Try again.");
+            }
+                }
+           scanner.close();      
+}}

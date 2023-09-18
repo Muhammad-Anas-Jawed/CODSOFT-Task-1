@@ -1,0 +1,24 @@
+ Prompt the user to enter their guess for the generated number.
+import java.util.*;
+import java.util.Scanner;
+public class NewClass {
+ 
+    public static void main(String[] args) {
+       
+        int min = 1;
+        int max = 100;
+    Random random = new Random();
+        int randomNum = (int) (Math.random()*(max-min+1)) + min;
+        
+        Scanner scanner = new Scanner(System.in);
+System.out.println("Guess the number between " + min + " and " + max + ":");
+        int userGuess = scanner.nextInt();
+        
+        if (userGuess == randomNum) {
+            System.out.println("Congratulations! You guessed the correct number.");
+        } else {
+            System.out.println("Sorry, the correct number was " + randomNum + ". Try again!");
+        }
+           scanner.close();
+}
+}
